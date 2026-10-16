@@ -1,7 +1,7 @@
 public class reportgenerator {
     
     
-System.out.println("Report Generator Initialized");
+//System.out.println("Report Generator Initialized");
 
 
 // report section  
