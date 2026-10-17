@@ -30,6 +30,7 @@ public class Main {
     public static void main(String[] args) {
         AppLogger log = AppLogger.get(Main.class);
 
+            System.out.println("Log Analyzer starting...");
         // Settings (change here if needed)
         String logsFolder = "logs";
         int failedLoginThreshold = 5;
