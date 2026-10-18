@@ -1,0 +1,12 @@
+2026-10-18 09:00:00 [INFO] Application started
+2026-10-18 09:00:01 [DEBUG] Reading configuration
+2026-10-18 09:05:00 [ERROR] Database connection failed
+2026-10-18 09:02:00 [WARN] Connection is slow
+2026-10-18 09:05:01 [INFO] Retrying database connection
+2026-10-18 09:05:02 [INFO] Database connected successfully
+2026-10-19T10:10:00.125 [TRACE] Request received
+2026-10-19 10:10:01 WARNING Disk space is low
+2026-10-19 10:11:00 [FATAL] Example fatal error
+Unformatted line retained for inspection
+    at example.Application.main(Application.java:25)
+2026-02-30 10:00:00 [INFO] Invalid calendar date retained as UNKNOWN
