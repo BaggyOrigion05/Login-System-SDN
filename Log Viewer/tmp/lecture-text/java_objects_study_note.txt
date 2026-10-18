@@ -1,0 +1,104 @@
+JAVA / UNIVERSITY STUDY NOTE
+Your mental model
+A university has students and lecturers, each with their own information.
+Classes -> objects -> information
+1 / 3
+Your idea is a good starting point: an object can hold information that we can retrieve through
+methods. The key distinction is:
+Class = a type / blueprint
+Object = one actual instance created from that class.
+UNIVERSITY CONTEXT
+Student class
+studentNumber
+name
+surname
+Lecturer class
+staffNumber
+name
+surname
+One Student object
+studentNumber: "230388353"
+name: "Molly"
+surname: "Rutumhu"
+One Lecturer object
+staffNumber: "L102"
+name: "Amina"
+surname: "Dlamini"
+Instance variables are the named fields that store each object's information. Every Student object has
+its own studentNumber, name and surname.
+University is the overall setting here. It could also be a class that keeps references to Student and Lecturer
+objects.
+
+JAVA / UNIVERSITY STUDY NOTE
+Build the Student blueprint
+Save this class in Student.java.
+Classes -> objects -> information
+2 / 3
+public class Student {
+    private String studentNumber;
+    private String name;
+    private String surname;
+    public Student(String studentNumber,
+                   String name, String surname) {
+        this.studentNumber = studentNumber;
+        this.name = name;
+        this.surname = surname;
+    }
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getSurname() {
+        return surname;
+    }
+}
+1  Instance variables store the information
+In private String name;, String is the type and name is the field name. private limits direct access from other
+classes.
+2  The constructor sets the starting information
+Student(...) has the same name as the class and no return type. It runs when new Student(...) creates an
+object. In this.name = name;, this.name is the object's field; name is the value passed in.
+3  Getters return information
+getName() returns this object's name. Reading it does not remove it from the object. A getter is a method;
+the parentheses mean we call it.
+
+JAVA / UNIVERSITY STUDY NOTE
+Create it. Read it. Print it.
+Use this code inside main in another class, such as UniversityDemo.
+Classes -> objects -> information
+3 / 3
+Student student = new Student("230388353", "Molly", "Rutumhu");
+Read the creation statement
+Student = type      student = variable referring to the object
+new Student(...) = creates and initializes a Student object
+Get the name and print it
+System.out.println("Student name is: " + student.getName());
+Output:  Student name is: Molly
+student -> the object .getName() -> returns "Molly"
+The + joins the label and the name. Java is case-sensitive: use System and getName(). To get the student
+number, call student.getStudentNumber().
+Quick summary
+Term
+Meaning
+Example
+Class
+Blueprint for a type of object
+Student
+Object
+An actual instance of a class
+The Student created with new
+Instance variable
+Stores one object's information
+private String name;
+Constructor
+Sets up a new object
+Student(...)
+Getter
+Method that returns information
+getName()
+Access / print
+Call a method, then use its result
+student.getName()
+Remember: declaring a field does not create a Student. new Student(...) does.

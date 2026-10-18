@@ -1,0 +1,205 @@
+Software Design 2 
+SDN260S 
+Strings, Characters and 
+Regular Expressions 
+Part 2 
+H. Mataifa 
+Department of Electronic, 
+Electrical and Computer 
+Engineering 1 
+Outline 
+• String:
+– Creation and manipulation
+• StringBuilder:
+– Creation and manipulation
+• Character:
+– Creation and manipulation
+• Regular Expressions:
+– Application to data validation
+2 
+Class StringBuilder 
+• Strings in Java are immutable (i.e. unmodifiable)
+• StringBuilder class provided for creating and manipulating modifiable
+strings
+• String vs. StringBuilder: use:
+– String when objects will not change
+– StringBuilder when objects will need to change (e.g. insert, delete, concatenate,
+etc.)
+• StringBuilder constructors:
+3 
+No-argument constructor 
+Creates “ ” StringBuilder 
+with capacity 10 
+Creates StringBuilder 
+Initialized to “hello” 
+Capacity is default (16) 
+Plus length of argument 
+• Operations we may wish to make on StringBuilder objects:
+– Determine number of characters:
+• s1.length();
+– Determine how many characters can be stored without allocating additional memory:
+• s1.capacity();
+– Set minimum capacity:
+• s1.ensureCapacity(int);
+– Increase/decrease length:
+• s1.setLength(int)
+– Extract single character:
+• s1.charAt(idx);
+– Extract sequence of characters:
+• s1.getChars(idx1, idx2, charArray, idx3);
+– Replace specified character with given character argument:
+• s1.setCharAt(idx, char);
+– Reverse the contents:
+• s1.reverse();
+4 
+Class StringBuilder 
+5 
+StringBuilder Methods length, setLength, capacity, ensureCapacity 
+
+6 
+StringBuilder Methods charAt, setCharAt, getChars, reverse 
+Note: when using methods such as getChars, ensure that index into the object does not lie outside the 
+range (0<=idx<=s1.length()) (otherwise StringIndexOutOfBoundsException gets thrown) 
+• Additional operations on StringBuilder objects:
+– Append values of various types to the StringBuilder object (versions provided for
+primitive types, character arrays, Strings, Objects, etc.)
+• s1.append(object);
+– Insert values of various types at a given position (versions provided for primitive types,
+character arrays, Strings, objects, etc.) :
+• s1.insert(idx, object.toString());
+– Delete character at specified index:
+• s1.deleteCharAt(idx);
+– Delete sequence of characters according to specified indexes:
+• s1.delete(idx1, idx2)
+7 
+Class StringBuilder 
+8 
+StringBuilder Method append 
+
+9 
+StringBuilder Methods insert, deleteCharAt, delete 
+
+Class Character 
+• Character is one of eight primitive data types in Java
+• Type-wrappers provided to enable primitive data types to be treated
+as objects
+• Most Character methods are static methods , designed for
+convenience in processing individual char values
+• Some Character methods:
+– Character.isDefined(char) (Unicode character set-based)
+– Character.isDigit (char)
+– Character.isLetter (char)
+– Character.isLetterOrDigit(char)
+– Character.isJavaIdentifierStart (char)
+– Character.isJavaIdentifierPart (char)
+– Character.isLowerCase(char)
+– Character.isUpperCase (char)
+– Character.toLowerCase (char)
+– Character.toUpperCase (char)
+– Character.forDigit (digit, radix)
+– Character.digit (character, radix)
+– c1.charValue()
+– c1.equals(c2)
+10 
+11 
+Character Methods 
+
+12 
+Character Methods 
+
+13 
+Character Methods 
+
+Regular Expressions 
+• Regular expression:
+– A specially formatted String (can’t be StringBuilder) that describes a search
+pattern for matching characters in other Strings
+– Consists of literal characters and special symbols
+– Useful for validating input and ensuring that data is in a particular format
+• Some special symbols predefined for use in regular expressions:
+– Digit (\d): any numeric character (\D: any nondigit)
+– Word (\w): any letter, digit or underscore character (\W: any nonword)
+– Whitespace ( \s): space, tab, carriage return, newline, form feed ( \S: any
+nonwhitespace)
+• Various operators/special characters are combined to form complex
+regular expression patterns
+14 
+
+Regular Expressions 
+• Use square brackets [ ] to match any (single of a) set of (the bracketed) 
+characters that do not have predefined special characters 
+– [aeiou] matches a single vowel character 
+– [A-Z] matches a single uppercase letter 
+– [A-Za-z] matches a single uppercase or lowercase character 
+– [A-z] matches any letter and all characters with integer value between 
+uppercase Z and lowercase a 
+• [^Z] matches any character that’s not a Z 
+• (abcd) matches the string “abcd” 
+• (abcd¦efgh) matches “abcd” or “efgh” 
+• Quantifiers: 
+– (charSequence)* matches zero or more occurrences of “charSequence” 
+– (charSequence)? matches zero or one occurrence of “charSequence” 
+– (charSequence)+ matches one or more occurrences of “charSequence” 
+– (charSequence){n,m} matches between n and m (inclusive) occurrences of 
+“charSequence” 
+– (charSequence){n} matches exactly n occurrences of “charSequence” 
+– (charSequence){n,} matches at least n occurrences of “charSequence” 15 
+16 
+Regular Expressions: user input validation 
+
+17 
+Regular Expressions: user input validation 
+
+Regular Expressions 
+• Methods used in conjunction with regular expressions:
+– s1.matches(“regex”) matches regex with s1 content; returns true if all of s1
+matches regex, false otherwise
+– s1.replaceAll(“regex”, “s2”) replaces every occurrence in s1 matching regex
+with s2
+– s1.replaceFirst(“regex”, “s2”) replaces first occurrence in s1 matching regex
+with s2
+– s1.split(“regex”) splits s1 based on regex (can be comma, whitespace, etc);
+returns an array of Strings
+18 
+
+19 
+Methods Used in Conjunction with Regular Expressions 
+
+More Regular Expression Classes and Methods 
+• Class Pattern represents a regular expression; has methods
+– matches
+– compile
+• Class Matcher contains both a regular-expression pattern and a
+charSequence in which to search for a pattern; has methods:
+– matches
+– find
+– group
+– lookingAt
+– replaceFirst
+– replaceAll
+•
+20 
+21 
+Regular Expression Classes Pattern and Matcher 
+Note: dot character (line 12) matches any character except the newline character 
+End of Topic 
+Classroom Exercise 
+• Design a Java application that will request a student user to enter his/her
+information, as follows:
+– First name(s)
+– Last name
+– Student number
+• The application will then display (on separate lines) the student’s:
+– Initials and surname
+– Student number
+– Student email address
+• Validate the student number  to ensure it lies in the range: 200000001-
+229999999; if student number entered is invalid, the application should inform
+the user and repeatedly prompt the user to re-enter a valid one
+• For example, if the student enters first name(s)  (Wandile Lloyd ); last name
+(Botha); student number (211111111), the application will display the information
+as follows:
+– Initials and surname: WL Botha
+– Student number: 211111111
+– Student email: 21111111@mycput.ac.za
+23 

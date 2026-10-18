@@ -1,0 +1,137 @@
+Software Design 2 
+SDN260S 
+Strings, Characters and 
+Regular Expressions 
+Part 1 
+H. Mataifa
+Department of Electronic, 
+Electrical and Computer 
+Engineering 1 
+Outline 
+• String:
+– Creation and manipulation
+• StringBuilder:
+– Creation and manipulation
+• Character:
+– Creation and manipulation
+• Regular Expressions:
+– Application to data validation
+2 
+Concepts 
+• Literal vs. object:
+– Literal: an exact representation of a value ; usually used for primitives
+(e.g. int, boolean, character, etc.)
+– Character literal : an integer value represented as a character in single
+quotes
+• e.g. ‘z’, ‘\n’ represent integer values of z and newline characters respectively
+– String literal : a sequence of characters in double quotes , treated as a
+String object in Java; assigned to a variable via assignment operator (=)
+• e.g. String color1= “blue”;
+• String color3= “blue”;
+– String object: created via the “new” operator
+• e.g. String color2=new String(“blue”);
+– Both color1 and color2 are String objects, but are constructed
+differently
+– Java treats all String literals with the same contents as a single
+String object with many references to it; preserves memory
+3
+color1 and color3 both refer to the same 
+location in memory (where “blue” is stored) 
+Class String 
+• Strings in Java are represented as objects
+• String Constructors: create a String object, allocating new memory
+and returning a reference to it in the specified variable
+4 
+No-argument constructor 
+Constructor with String 
+argument 
+Class String 
+• Observation: String objects in Java are immutable; i.e. once created and
+initialized, the character contents can’t be changed ; thus copying an existing
+String object is unnecessary (memory misuse)
+• Operations we may wish to make on String objects:
+– Determine number of characters
+• s1.length();
+– Extract single character
+• s1.charAt(idx);
+– Extract sequence of characters
+• s1.getChars(idx1, idx2, charArray, idx3);
+– Compare String objects:
+1. s1.equals(s2); (s1.equalsIgnoreCase(s2);)
+2. s1==s2;
+3. s1.compareTo(s2);
+4. s1.regionMatches(idx1, s2, idx2, idx3); (s1.regionMatches(true, idx1, s2, idx2, idx3))
+5 
+Notes: 
+ equals returns true if s1, s2 contents are the same; uses lexicographic comparison
+ == on String literals means the same as equals; different on String objects created with new operator
+ Attempting to instantiate a String literal that already exists in a program does not create a new one
+ regionMatches checks for equality of two substrings
+Remember: 
+ Use s1.equals(s2) or s1.compareTo(s2) to
+compare contents of s1, s2
+ Use s1==s2  to check whether s1, s2 refer
+to the same memory location
+ equals returns boolean, compareTo 
+returns int 
+ equalsIgnoreCase is case-insensitive  
+version of equals
+Class String 
+6 
+String 
+Comparison 
+7 
+String 
+Comparison 
+Class String 
+• More String Operations:
+– Check whether given string starts with specified sequence of strings
+• s1.startsWith(s2, idx);
+– Check whether given string ends with specified sequence of strings
+• s1.endsWith(s2);
+– Extract index of character/substring
+• s1.indexOf(char/string, idx);
+• s1.lastIndexOf(char/string, idx);
+– Extract substring passed as argument
+• s1.substring(idx1, idx2);
+– Concatenate two Strings
+• s1.concat(s2);
+8 
+Notes: 
+ indexOf returns index of first occurrence of first argument in calling String if found, -1 otherwise
+ lastIndexOf returns index of last occurrence of first argument in calling String if found, -1 otherwise;
+searches from end of String
+ substring extracts substring from calling String based on index(es) passed as argument(s)
+9 
+String Methods startsWith, endsWith 
+10 
+String Methods indexOf, lastIndexOf 
+11 
+String Method substring 
+String Method concat 
+Class String 
+• More String Operations:
+– Replace one character with another
+• s1.replace(charToBeReplaced, charToReplaceWith);
+– Generate lower/upper case version of calling String
+• s1.toLowerCase();
+• s1.toUpperCase();
+– Trim whitespace from calling String
+• s1.trim();
+– Create character array that’s a copy of calling String
+• s1.toCharArray();
+– Convert argument (of any type) to String
+• String.valueOf(otherDataType);
+12 
+Notes: 
+ replace  can also be used to replace a substring (rather than a single character)
+ valueOf is a class method (thus it’s called with the String className)
+ None of the methods modifies the calling (original) object (String object is immutable)
+13 
+String Methods replace, toLower/UpperCase, trim, toCharArray 
+
+14 
+String Method valueOf 
+
+Next part: 
+Character and StringBuilder 
