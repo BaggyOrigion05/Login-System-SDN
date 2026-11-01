@@ -1,0 +1,78 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R ] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 663 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 800 Td
+(SECURITY INCIDENT REPORT) Tj
+T*
+() Tj
+T*
+(Generated: 2026-11-01T19:31:29.849916Z) Tj
+T*
+(Period: null to null) Tj
+T*
+(Highest severity: HIGH) Tj
+T*
+(Total findings: 1) Tj
+T*
+(Supporting events: 3) Tj
+T*
+() Tj
+T*
+(Findings by severity) Tj
+T*
+(   LOW: 0) Tj
+T*
+(   MEDIUM: 0) Tj
+T*
+(   HIGH: 1) Tj
+T*
+(   CRITICAL: 0) Tj
+T*
+() Tj
+T*
+(Finding details) Tj
+T*
+(1. [HIGH] RepeatedLoginFailureRule) Tj
+T*
+(   5 failed logins from the same IP within 5 minutes) Tj
+T*
+(   IP: 10.0.0.5, user: admin) Tj
+T*
+(   First seen: 2026-10-30T10:00:00Z) Tj
+T*
+(   Last seen: 2026-10-30T10:04:00Z) Tj
+T*
+(   Supporting events \(3\): e1, e2, e3) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000116 00000 n 
+0000000186 00000 n 
+0000000312 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1025
+%%EOF

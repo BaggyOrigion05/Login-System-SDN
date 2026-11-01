@@ -4,7 +4,6 @@ import java.time.Instant;
 import java.util.List;
 import loganalyzer.model.SecurityFinding;
 
-// Owner: Iviwe (Security Findings, Reporting & Application Logging)
 public class SecurityReport {
 
     private final Instant generatedAt;
