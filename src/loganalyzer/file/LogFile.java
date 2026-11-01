@@ -1,42 +1,36 @@
-package loganalyzer.file;
+package loganalyzer;
 
-import java.nio.file.Path;
-import java.time.Instant;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-// Owner: Reece (Log Parsing & File Handling)
-public class LogFile {
-
-    private final String id;
-    private final String sourceId;
-    private final Path canonicalPath;
-    private final long sizeBytes;
-    private final Instant modifiedAt;
-
-    public LogFile(String id, String sourceId, Path canonicalPath, long sizeBytes, Instant modifiedAt) {
-        this.id = id;
-        this.sourceId = sourceId;
-        this.canonicalPath = canonicalPath;
-        this.sizeBytes = sizeBytes;
-        this.modifiedAt = modifiedAt;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getSourceId() {
-        return sourceId;
-    }
-
-    public Path getCanonicalPath() {
-        return canonicalPath;
-    }
-
-    public long getSizeBytes() {
-        return sizeBytes;
-    }
-
-    public Instant getModifiedAt() {
-        return modifiedAt;
+public class LogAnalyzerCountingMalformed{
+    public static void main(String[] args){
+        String filePath = "server.log";
+        int malformedCount = 0;
+        
+        String expectedFormat = "^\\[\\d{4}-\\d{2}-\\d{2}\\] \\[(INFO|WARN|ERROR|DEBUG)\\] .*";
+        Pattern pattern = Pattern.compile(expectedFormat);
+        
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))){
+            String line;
+            while((line = br.readLine()) != null){
+                if(line.trim().isEmpty()){
+                    continue;
+                }
+                
+                Matcher matcher = pattern.matcher(line);
+                
+                if(!matcher.matches()){
+                    malformedCount++;
+                }
+            }
+        }catch(IOException e){
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
+        
+        System.out.println("Total malformed lines found: " + malformedCount);
     }
 }
