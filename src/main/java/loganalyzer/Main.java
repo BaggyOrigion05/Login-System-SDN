@@ -40,7 +40,7 @@ public class Main {
         LogController controller = new LogController(viewer, reports);
 
         log.info("Starting Log Analyzer");
-        if (args.length > 0 && args[0].equals("--gui")) GuiApp.launch(controller);
-        else new CliApp(controller).run();
+        if (args.length > 0 && args[0].equals("--cli")) new CliApp(controller).run();
+        else GuiApp.launch(controller);
     }
 }
