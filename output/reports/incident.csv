@@ -1,2 +1,0 @@
-finding_id,rule_id,severity,summary,source_ip,username,first_seen,last_seen,supporting_events
-"f1","RepeatedLoginFailureRule","HIGH","5 failed logins from the same IP within 5 minutes","10.0.0.5","admin","2026-10-30T10:00:00Z","2026-10-30T10:04:00Z","e1, e2, e3"

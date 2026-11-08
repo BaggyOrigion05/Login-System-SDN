@@ -1,8 +1,3 @@
-Sun Nov 01 21:31:23 SAST 2026 [INFO] MemoryFindingRepository: Saved 1 findings
-Sun Nov 01 21:31:23 SAST 2026 [INFO] ReportService: Report generated with 1 findings
-Sun Nov 01 21:31:23 SAST 2026 [INFO] ReportService: PDF report saved to output/reports/incident.pdf
-Sun Nov 01 21:31:23 SAST 2026 [INFO] ReportService: CSV report saved to output/reports/incident.csv
-Sun Nov 01 21:31:29 SAST 2026 [INFO] MemoryFindingRepository: Saved 1 findings
-Sun Nov 01 21:31:29 SAST 2026 [INFO] ReportService: Report generated with 1 findings
-Sun Nov 01 21:31:29 SAST 2026 [INFO] ReportService: PDF report saved to output/reports/incident.pdf
-Sun Nov 01 21:31:29 SAST 2026 [INFO] ReportService: CSV report saved to output/reports/incident.csv
+Wed Nov 04 20:01:43 SAST 2026 [INFO] Main: Starting Log Analyzer
+Wed Nov 04 20:01:52 SAST 2026 [INFO] Main: Starting Log Analyzer
+Wed Nov 04 20:02:15 SAST 2026 [INFO] Main: Starting Log Analyzer
