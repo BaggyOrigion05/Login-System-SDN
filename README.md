@@ -1,6 +1,6 @@
 # Log Analyzer
 
-A Java 25 desktop and command-line application for reviewing log files and detecting repeated failed logins. The application uses Java Swing and the standard library. JUnit 5 is used only for tests.
+A Java 25 desktop and command-line application for reviewing log files and detecting repeated failed logins. The application uses Java Swing, the standard library and OpenPDF (PDF export). JUnit 5 is used only for tests.
 
 ## Open the application
 
@@ -15,10 +15,10 @@ The ZIP includes a built JAR. Java 25 or newer must be available. The launcher c
 On any operating system, open a terminal in this folder and run:
 
 ```text
-java -jar target/log-analyzer-1.0.0.jar --gui
+java -jar target/log-analyzer-1.0.0.jar
 ```
 
-Without `--gui`, the command-line interface opens.
+Add `--cli` to open the command-line interface instead.
 
 ## Features
 
@@ -32,7 +32,7 @@ Without `--gui`, the command-line interface opens.
 - Duplicate-free saved findings, including after restarting.
 - Dark library sidebar, summary cards, sortable tables, severity filtering and literal-text search.
 - Parsed-entry and malformed-line views; detailed finding descriptions.
-- CSV and text export containing the current analysis summary and findings.
+- CSV, text and PDF export containing the current analysis summary and findings.
 - Background SwingWorker operations and a bounded four-worker pool for batch analysis.
 - Safe imports without overwriting existing files; path traversal protection.
 
@@ -55,6 +55,14 @@ Build output: target/log-analyzer-1.0.0.jar.
 JUnit reports: target/surefire-reports/.
 Submitted evidence: docs/test-evidence/.
 
+## Run from an IDE
+
+1. Open the project root folder (the one containing pom.xml) as a Maven project in IntelliJ, Eclipse or VS Code.
+2. Set the project JDK to 25.
+3. Open src/main/java/loganalyzer/Main.java and press Run.
+
+The GUI opens by default. Pass `--cli` as a program argument for the command-line interface. Keep the working directory set to the project root so logs/ and data/ resolve correctly.
+
 ## Demo files
 
 | File | Parsed | Malformed | Blank | Findings |
@@ -68,6 +76,8 @@ Submitted evidence: docs/test-evidence/.
 Elapsed milliseconds depend on the machine. Two HIGH findings are expected across the four files.
 
 ## Command-line commands
+
+Start the CLI with `--cli`, then use:
 
 ```text
 list
@@ -91,7 +101,7 @@ Paths containing spaces may be quoted. CLI exports refuse to overwrite existing 
 - src/main/java/loganalyzer/detection: IPv4 failure rule and detection engine.
 - src/main/java/loganalyzer/file: recursive library discovery, safe paths and cached reading.
 - src/main/java/loganalyzer/service: analysis results, orchestration and batch workers.
-- src/main/java/loganalyzer/reporting: persistence, report summaries and exports.
+- src/main/java/loganalyzer/reporting: persistence, report summaries and exports (CSV, text, PDF).
 - src/main/java/loganalyzer/ui: Swing desktop and command-line interfaces.
 - src/test/java/loganalyzer: JUnit regression and opt-in GUI tests.
 - logs: synthetic demonstration logs.
@@ -120,5 +130,4 @@ Saved findings are written under data/findings.ser. The submission ZIP excludes 
 - [JUnit 5.11.4 user guide](https://docs.junit.org/5.11.4/user-guide/index.html)
 - [Java 25 SwingWorker API](https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/javax/swing/SwingWorker.html)
 - [Java 25 ExecutorService API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html)
-
-GA2/GA7 labels and personal contribution statements in the report must be checked against the course rubric and the team's actual records before submission.
+- [OpenPDF](https://github.com/LibrePDF/OpenPDF)
