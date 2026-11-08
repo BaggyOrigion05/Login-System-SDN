@@ -1,0 +1,48 @@
+Log Analyzer starting...
+2026-11-01T21:13:30.504130900Z INFO [Main] Starting Log Analyzer
+Commands: list | analyze <file> | analyze-all | import <path> | summary | export <path.csv|path.txt> | findings | help | exit
+log-analyzer> LOG ANALYSIS REPORT
+===================
+Generated findings: 9
+
+HIGH: 2
+MEDIUM: 3
+LOW: 4
+
+[LOW] 2026-10-18 10:00:00 UTC — Failed login attempt from 203.0.113.42
+Rule: Failed login attempts | File: sample.log
+First failed login attempt from this IPv4 address. Event: Login failed for user alice from 203.0.113.42
+
+[MEDIUM] 2026-10-18 10:00:30 UTC — Second failed login attempt from 203.0.113.42
+Rule: Failed login attempts | File: sample.log
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Login failed for user alice from 203.0.113.42
+
+[HIGH] 2026-10-18 10:02:00 UTC — Repeated failed logins from 203.0.113.42
+Rule: Failed login attempts | File: sample.log
+5 failed login attempts from this IPv4 address occurred within 5 minutes. Latest event: Login failed for user alice from 203.0.113.42
+
+[LOW] 2026-10-18 11:01:00 UTC — Failed login attempt from 0.0.0.0
+Rule: Failed login attempts | File: demo/mixed-formats.log
+First failed login attempt from this IPv4 address. Event: Authentication denied from 0.0.0.0
+
+[MEDIUM] 2026-10-18 11:01:30 UTC — Second failed login attempt from 0.0.0.0
+Rule: Failed login attempts | File: demo/mixed-formats.log
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Authentication denied from 0.0.0.0
+
+[LOW] 2026-10-18 11:04:00 UTC — Failed login attempt from 255.255.255.255
+Rule: Failed login attempts | File: demo/mixed-formats.log
+First failed login attempt from this IPv4 address. Event: Login failed from 255.255.255.255
+
+[LOW] 2026-10-18 12:00:00 UTC — Failed login attempt from 192.0.2.10
+Rule: Failed login attempts | File: demo/authentication.jsonl
+First failed login attempt from this IPv4 address. Event: Invalid login from 192.0.2.10
+
+[MEDIUM] 2026-10-18 12:00:30 UTC — Second failed login attempt from 192.0.2.10
+Rule: Failed login attempts | File: demo/authentication.jsonl
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Failed password for admin from 192.0.2.10
+
+[HIGH] 2026-10-18 12:02:00 UTC — Repeated failed logins from 192.0.2.10
+Rule: Failed login attempts | File: demo/authentication.jsonl
+5 failed login attempts from this IPv4 address occurred within 5 minutes. Latest event: Login failed from 192.0.2.10
+
+log-analyzer> 

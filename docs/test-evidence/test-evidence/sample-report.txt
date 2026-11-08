@@ -1,0 +1,61 @@
+LOG ANALYZER | ANALYSIS REPORT
+
+Files analyzed: 4
+Parsed lines: 20
+Malformed lines: 3
+Blank lines: 1
+Findings: 9
+HIGH: 2
+MEDIUM: 3
+LOW: 4
+
+FILE: demo/authentication.jsonl
+6 parsed | 1 malformed | 0 blank | 3 findings | 16ms
+
+[LOW] Failed login attempt from 192.0.2.10
+Time (UTC): 2026-10-18T12:00:00Z
+First failed login attempt from this IPv4 address. Event: Invalid login from 192.0.2.10
+
+[MEDIUM] Second failed login attempt from 192.0.2.10
+Time (UTC): 2026-10-18T12:00:30Z
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Failed password for admin from 192.0.2.10
+
+[HIGH] Repeated failed logins from 192.0.2.10
+Time (UTC): 2026-10-18T12:02:00Z
+5 failed login attempts from this IPv4 address occurred within 5 minutes. Latest event: Login failed from 192.0.2.10
+Malformed line 7: {not valid json}
+
+FILE: demo/clean.log
+3 parsed | 0 malformed | 0 blank | 0 findings | 8ms
+
+FILE: demo/mixed-formats.log
+6 parsed | 2 malformed | 1 blank | 3 findings | 13ms
+
+[LOW] Failed login attempt from 0.0.0.0
+Time (UTC): 2026-10-18T11:01:00Z
+First failed login attempt from this IPv4 address. Event: Authentication denied from 0.0.0.0
+
+[MEDIUM] Second failed login attempt from 0.0.0.0
+Time (UTC): 2026-10-18T11:01:30Z
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Authentication denied from 0.0.0.0
+
+[LOW] Failed login attempt from 255.255.255.255
+Time (UTC): 2026-10-18T11:04:00Z
+First failed login attempt from this IPv4 address. Event: Login failed from 255.255.255.255
+Malformed line 5: this line has no supported timestamp or level
+Malformed line 7: 2026-02-30T11:02:00Z INFO Invalid calendar date
+
+FILE: sample.log
+5 parsed | 0 malformed | 0 blank | 3 findings | 8ms
+
+[LOW] Failed login attempt from 203.0.113.42
+Time (UTC): 2026-10-18T10:00:00Z
+First failed login attempt from this IPv4 address. Event: Login failed for user alice from 203.0.113.42
+
+[MEDIUM] Second failed login attempt from 203.0.113.42
+Time (UTC): 2026-10-18T10:00:30Z
+A second failed login from this IPv4 address occurred within 5 minutes. Event: Login failed for user alice from 203.0.113.42
+
+[HIGH] Repeated failed logins from 203.0.113.42
+Time (UTC): 2026-10-18T10:02:00Z
+5 failed login attempts from this IPv4 address occurred within 5 minutes. Latest event: Login failed for user alice from 203.0.113.42

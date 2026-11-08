@@ -1,0 +1,11 @@
+Final verification: 2026-11-01, Africa/Johannesburg
+Java runtime: JetBrains OpenJDK 21.0.9
+Compilation target: Java 17
+Command: mvn -Dgui.tests=true verify
+Tests run: 58, Failures: 0, Errors: 0, Skipped: 0
+Core and parameterized invocations: 57
+Swing desktop workflow invocations: 1
+Build: SUCCESS
+JAR smoke check: 4 files, 20 parsed, 3 malformed, 1 blank, 9 findings
+Fresh JVM reload: 9 saved findings
+Local workspace prefixes in captured CLI output are replaced with <project>.
