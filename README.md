@@ -1,8 +1,6 @@
-Main/README.md
-
 # Log Analyzer
 
-A Java 17 desktop and command-line application for reviewing log files and detecting repeated failed logins. The application uses Java Swing and the standard library. JUnit 5 is used only for tests.
+A Java 25 desktop and command-line application for reviewing log files and detecting repeated failed logins. The application uses Java Swing and the standard library. JUnit 5 is used only for tests.
 
 ## Open the application
 
@@ -12,7 +10,7 @@ A Java 17 desktop and command-line application for reviewing log files and detec
 4. Select **sample.log** in the left-hand library.
 5. Click **Analyze selected**.
 
-The ZIP includes a built JAR. Java 17 or newer must be available. The launcher checks JAVA_HOME, PATH, common JDK folders and IntelliJ's bundled Java. See [the beginner user guide](docs/USER_GUIDE.md) if Java is missing.
+The ZIP includes a built JAR. Java 25 or newer must be available. The launcher checks JAVA_HOME, PATH, common JDK folders and IntelliJ's bundled Java. See [the beginner user guide](docs/USER_GUIDE.md) if Java is missing.
 
 On any operating system, open a terminal in this folder and run:
 
@@ -40,7 +38,7 @@ Without `--gui`, the command-line interface opens.
 
 ## Build and test
 
-Requirements for development: JDK 17 or newer, Maven 3.9+, and internet access for the first dependency download.
+Requirements for development: JDK 25 or newer, Maven 3.9+, and internet access for the first dependency download.
 
 On this Windows computer, **Build and Test.bat** can use the existing IntelliJ Java and Maven installations. On other computers it uses an installed Maven or a detected IntelliJ installation.
 
@@ -120,7 +118,7 @@ Saved findings are written under data/findings.ser. The submission ZIP excludes 
 ## References
 
 - [JUnit 5.11.4 user guide](https://docs.junit.org/5.11.4/user-guide/index.html)
-- [Java 17 SwingWorker API](https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/SwingWorker.html)
-- [Java 17 ExecutorService API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ExecutorService.html)
+- [Java 25 SwingWorker API](https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/javax/swing/SwingWorker.html)
+- [Java 25 ExecutorService API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html)
 
 GA2/GA7 labels and personal contribution statements in the report must be checked against the course rubric and the team's actual records before submission.

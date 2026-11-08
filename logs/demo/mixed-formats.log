@@ -1,0 +1,9 @@
+2026-10-18T11:00:00Z INFO Application started
+[2026-10-18 11:01:00] local.WARNING: Authentication denied from 0.0.0.0
+[2026-10-18 11:01:30] local.WARNING: Authentication denied from 0.0.0.0
+[2026-10-18] [INFO] Daily service check completed
+this line has no supported timestamp or level
+
+2026-02-30T11:02:00Z INFO Invalid calendar date
+2026-10-18T11:03:00Z WARN Login failed from 256.10.0.1
+2026-10-18T11:04:00Z WARN Login failed from 255.255.255.255

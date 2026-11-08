@@ -1,0 +1,7 @@
+{"timestamp":"2026-10-18T12:00:00Z","level":"WARN","message":"Invalid login from 192.0.2.10"}
+{"timestamp":"2026-10-18T12:00:30Z","level":"WARN","message":"Failed password for admin from 192.0.2.10"}
+{"timestamp":"2026-10-18T12:01:00Z","level":"WARN","message":"Authentication denied from 192.0.2.10"}
+{"timestamp":"2026-10-18T12:01:30Z","level":"WARN","message":"Login failed from 192.0.2.10"}
+{"timestamp":"2026-10-18T12:02:00Z","level":"WARN","message":"Login failed from 192.0.2.10","context":{"service":"portal"}}
+{"timestamp":"2026-10-18T12:03:00Z","level":"INFO","message":"Login successful from 198.51.100.20"}
+{not valid json}
